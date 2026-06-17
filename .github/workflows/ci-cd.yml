@@ -17,7 +17,7 @@ jobs:
       - name: Build
         id: build
         run: |
-          & "C:\Program Files\Docker\Docker\resources\bin\docker.exe" exec springboot-web bash -c "cd /app && git pull && mvn package -DskipTests -Dmaven.compiler.enablePreview=true --this-flag-does-not-exist"
+          & "C:\Program Files\Docker\Docker\resources\bin\docker.exe" exec springboot-web bash -c "cd /app && git pull && mvn package -DskipTests -Dmaven.compiler.enablePreview=true"
 
       - name: Test
         id: test
