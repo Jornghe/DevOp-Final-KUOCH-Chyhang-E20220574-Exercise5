@@ -1,0 +1,1 @@
+this file triggers a build failure to test email notification

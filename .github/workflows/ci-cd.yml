@@ -17,7 +17,7 @@ jobs:
       - name: Build
         id: build
         run: |
-          & "C:\Program Files\Docker\Docker\resources\bin\docker.exe" exec springboot-web bash -c "cd /app && git pull && mvn package -DskipTests -Dmaven.compiler.enablePreview=true"
+          & "C:\Program Files\Docker\Docker\resources\bin\docker.exe" exec springboot-web bash -c "cd /app && git pull && mvn package -DskipTests -Dmaven.compiler.enablePreview=true --this-flag-does-not-exist"
 
       - name: Test
         id: test
@@ -52,7 +52,7 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "BUILD FAILED: ${{ github.repository }} - ${{ github.sha }}"
-          to: srengty@gmail.com,${{ github.actor }}@gmail.com
+          to: srengty@gmail.com,jihongkouch3@gmail.com
           from: ${{ secrets.MAIL_USERNAME }}
           body: |
             Build failed for repository: ${{ github.repository }}
